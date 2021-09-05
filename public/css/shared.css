@@ -113,6 +113,7 @@ i {
   margin-top: 10px;
 }
 
+.sessionStatusMessage,
 .errorContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -130,14 +131,24 @@ i {
   margin-bottom: 20px;
 }
 
+.sessionStatusMessage .errorTitle,
 .errorContainer .errorTitle {
   color: red;
   font-weight: bold;
   font-size: 1.5rem;
 }
 
+.sessionStatusMessage ul li,
 .errorContainer ul li {
   color: #464646;
+}
+
+.sessionStatusMessage {
+  background-color: rgba(118, 163, 247, 0.438);
+}
+
+.sessionStatusMessage .sessionStatusTitle {
+  color: #0154ee;
 }
 
 .flexRowCenter,

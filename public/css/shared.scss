@@ -83,6 +83,7 @@ i {
     margin: auto;
     margin-top: 10px;
 }
+.sessionStatusMessage,
 .errorContainer {
     display: flex;
     flex-direction: column;
@@ -104,11 +105,16 @@ i {
         }
     }
 }
+.sessionStatusMessage {
+    background-color: rgba(118, 163, 247, 0.438);
+    .sessionStatusTitle {
+        color: rgb(1, 84, 238);
+    }
+}
 .flexRowCenter,
 .flexRowStart {
     width: 100%;
     display: flex;
-
     max-width: 500px;
     margin: auto;
 }
