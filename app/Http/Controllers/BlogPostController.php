@@ -31,7 +31,7 @@ class BlogPostController extends Controller
     {
 
         $userId = $r->userId == null ? Auth::user()->id : $r->userId;
-        $posts = BlogPost::where("user_id", $userId)->paginate(9);
+        $posts = BlogPost::where("user_id", $userId)->orderBy('blog_post_date', 'DESC')->paginate(9);
 
         foreach ($posts as $post) {
             $path = 'uploads/blogs_posts/' . $post->blog_post_id;

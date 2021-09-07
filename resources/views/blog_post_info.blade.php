@@ -27,7 +27,8 @@
     <div class="bodyLimiter">
         <a class="autherName cmButton" href="/posts_by_user/{{ $post->user->id }}">
             By {{ $post->user->name }}
-            &nbsp;<i class="fas fa-user"></i>
+            &nbsp;
+            <img class="userProfileImage" src="https://avatars.dicebear.com/api/initials/{{ $post->user->name }}.svg">
         </a>
         @if ($post->blog_post_is_horizontal == 1)
             <div class="blogInfoHorisontal">

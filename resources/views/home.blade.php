@@ -42,7 +42,12 @@
 
 
                             <div class="gridItemCategory">
+                              @if ($post->category->getImage() == '')
+                                <img src="{{ URL::asset('images/category.png') }}" alt="">
+                            @else
                                 <img src="{{ $post->category->getImage() }}" alt="">
+                            @endif
+
                             </div>
                         </div>
                         <div class="gridItemDetails">

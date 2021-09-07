@@ -28,7 +28,8 @@
         </div>
 
 
-
+        <i id="compressEditer" class="fas fa-compress-arrows-alt"></i>
+        <i id="expandEditer" class="fas fa-expand-arrows-alt"></i>
         <div id="editor" classs="postDesc">
             {!! $post->blog_post_description ?? '' !!}
         </div>
@@ -72,30 +73,32 @@
 
             </div>
         </div>
+        <div class="flexRowCenter">
+            <button id="blogsPostAdd" class="cmButton" type="submit">
 
-        <button id="blogsPostAdd" class="cmButton" type="submit">
-
-            <span>
-                @if (isset($post))
-                    Update
-                @else
-                    Save
-                @endif
-            </span>
-            &nbsp;
-            <i class="fas fa-check"></i>
-
-        </button>
-        @if (isset($post))
-            <button id="adminlogsPostDelet_{{ $post->blog_post_id }}" class=" deletePostBtn cmButton" type="submit">
                 <span>
-                    Delete
+                    @if (isset($post))
+                        Update
+                    @else
+                        Save
+                    @endif
                 </span>
                 &nbsp;
-                <i class="fas fa-trash"></i>
-            </button>
+                <i class="fas fa-check"></i>
 
-        @endif
+            </button>
+            @if (isset($post))
+                &nbsp; &nbsp; &nbsp;
+                <button id="adminlogsPostDelet_{{ $post->blog_post_id }}" class=" deletePostBtn cmButton" type="submit">
+                    <span>
+                        Delete
+                    </span>
+                    &nbsp;
+                    <i class="fas fa-trash"></i>
+                </button>
+
+            @endif
+        </div>
         <i class="loadingSpinner fas fa-yin-yang"></i>
         <div id="savePostToast" class="cmToast cmToastHide">
             <span>

@@ -124,6 +124,7 @@ i {
 .flexRowCenter {
     justify-content: center;
 }
+
 .seperator {
     margin: auto 20px;
     width: 2px;
@@ -708,11 +709,57 @@ footer {
     position: absolute;
     bottom: 5px;
 }
+.userProfileImage {
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+}
+.enterImage {
+    position: absolute;
+    right: 5px;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+}
+#editor {
+    overflow: auto;
+    resize: both;
+}
+.ql-toolbar.ql-snow {
+    border: 1px solid black;
+}
 .ql-toolbar.ql-snow,
 #editor {
-    width: 95%;
+    border: 1px solid black;
+    width: 500px;
     max-width: 11400px;
     background-color: white;
+    max-height: 500px;
+}
+.ql-align-center {
+    text-align: center;
+}
+.ql-editor .ql-align-right {
+    text-align: right;
+}
+pre.ql-syntax {
+    background-color: #23241f;
+    color: #f8f8f2;
+    overflow: visible;
+    white-space: pre-wrap;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+#compressEditer,
+#expandEditer {
+    cursor: pointer;
+}
+#compressEditer {
+    display: none;
+}
+.maxWidth95 {
+    width: 95% !important;
+    max-width: 95% !important;
 }
 .ql-editor {
     min-height: 300px;
@@ -950,6 +997,21 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+    .ql-toolbar.ql-snow,
+    #editor {
+        max-width: 95%;
+    }
+    #compressEditer,
+    #expandEditer {
+        display: none;
+    }
+    .flexRowCenter {
+        flex-direction: column;
+        align-items: center;
+        .seperator {
+            display: none;
+        }
+    }
     footer {
         .footerContainer {
             flex-direction: column;

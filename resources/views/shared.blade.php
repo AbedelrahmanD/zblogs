@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+@php
+$webVersion = 'version=1';
+@endphp
 
 <head>
     <meta charset="UTF-8">
@@ -8,14 +11,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link href="{{ URL::asset('css/aos.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/fontawesome.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('css/shared.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/blog_post_info.css') }}">
-    <link rel="icon" type="image/png" href="{{ URL::asset('images/logo.png') }}">
-    <link href="{{ URL::asset('css/dashboard.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/quil.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/shared.css') }}?<?= $webVersion ?>">
+    <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}?<?= $webVersion ?>">
+    <link rel="stylesheet" href="{{ URL::asset('css/blog_post_info.css') }}?<?= $webVersion ?>">
+    <link rel="icon" type="image/png" href="{{ URL::asset('images/logo.png') }}?<?= $webVersion ?>">
+    <link href="{{ URL::asset('css/dashboard.css') }}?<?= $webVersion ?>" rel="stylesheet">
+    <link href="{{ URL::asset('css/quil.css') }}?<?= $webVersion ?>" rel="stylesheet">
     <script src="{{ URL::asset('js/jquery.js') }}"></script>
-    <script src="{{ URL::asset('js/shared.js') }}"></script>
+    <script src="{{ URL::asset('js/shared.js') }}?<?= $webVersion ?>"></script>
 
     <title>Blogs</title>
 </head>
@@ -62,7 +65,9 @@
                             </a>
                             @if (Illuminate\Support\Facades\Auth::check())
                                 <span class="userDropDownContainer">
-                                    <i class="mainIcon fas fa-user"></i>
+
+                                    <img class="mainIcon"
+                                        src="https://avatars.dicebear.com/api/initials/{{ Illuminate\Support\Facades\Auth::user()->name }}.svg">
                                     <div class="userDropDownOptions">
 
                                         <a href="/post_add">
@@ -143,68 +148,11 @@
 
 </body>
 <script src="{{ URL::asset('js/quil.js') }}"></script>
-<script>
-    var toolbarOptions = [
-        ['bold', 'italic', 'underline', 'strike'], // toggled buttons
-        ['blockquote', 'code-block'],
-
-        [{
-            'header': 1
-        }, {
-            'header': 2
-        }], // custom button values
-        [{
-            'list': 'ordered'
-        }, {
-            'list': 'bullet'
-        }],
-        [{
-            'script': 'sub'
-        }, {
-            'script': 'super'
-        }], // superscript/subscript
-        [{
-            'indent': '-1'
-        }, {
-            'indent': '+1'
-        }], // outdent/indent
-        [{
-            'direction': 'rtl'
-        }], // text direction
-
-        [{
-            'size': ['small', false, 'large', 'huge']
-        }], // custom dropdown
-        [{
-            'header': [1, 2, 3, 4, 5, 6, false]
-        }],
-
-        [{
-            'color': []
-        }, {
-            'background': []
-        }], // dropdown with defaults from theme
-        ['link', 'image'],
-        [{
-            'align': []
-        }],
-
-        ['clean'] // remove formatting button
-    ];
-    var quill = new Quill('#editor', {
-        theme: 'snow',
-        modules: {
-            toolbar: toolbarOptions
-        }
-    });
-</script>
 <script src="{{ URL::asset('js/aos.js') }}"></script>
-<script>
-    AOS.init();
-</script>
-<script src="{{ URL::asset('js/blogs_posts.js') }}"></script>
-<script src="{{ URL::asset('js/home.js') }}"></script>
-<script src="{{ URL::asset('js/app_blogs_categories.js') }}"></script>
-<script src="{{ URL::asset('js/app_blogs_posts.js') }}"></script>
+<script src="{{ URL::asset('js/packages.js') }}?<?= $webVersion ?>"></script>
+<script src="{{ URL::asset('js/blogs_posts.js') }}?<?= $webVersion ?>"></script>
+<script src="{{ URL::asset('js/home.js') }}?<?= $webVersion ?>"></script>
+<script src="{{ URL::asset('js/app_blogs_categories.js') }}?<?= $webVersion ?>"></script>
+<script src="{{ URL::asset('js/app_blogs_posts.js') }}?<?= $webVersion ?>"></script>
 
 </html>

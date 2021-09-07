@@ -4,6 +4,19 @@ $.ajaxSetup({
     },
 });
 $(function () {
+    $("#expandEditer").click(function (e) {
+        e.preventDefault();
+        $(this).hide();
+        $(".ql-toolbar.ql-snow, #editor ").toggleClass("maxWidth95");
+        $("#compressEditer").show();
+    });
+
+    $("#compressEditer").click(function (e) {
+        e.preventDefault();
+        $(this).hide();
+        $(".ql-toolbar.ql-snow, #editor ").toggleClass("maxWidth95");
+        $("#expandEditer").show();
+    });
     $(".loadingScreen").fadeOut();
     setStyle();
     $(window).resize(function () {
@@ -80,5 +93,5 @@ function scrollDown() {
     setTimeout(() => {
         document.body.scrollTop = 200;
         document.documentElement.scrollTop = 200;
-    }, 1100);
+    }, 1000);
 }

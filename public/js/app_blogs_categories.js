@@ -1,7 +1,15 @@
 $(function () {
+    $("#enterImageSearchCategory").click(function (e) {
+        e.preventDefault();
+        searchCategory();
+    });
     $("#categorySearchForm").submit(function (e) {
         e.preventDefault();
-        var categoryName = $("#searchCategoryName").val().trim();
-        window.location.href = "/categories/" + categoryName;
+        searchCategory();
     });
 });
+
+function searchCategory() {
+    var categoryName = $("#searchCategoryName").val().trim();
+    window.location.href = "/categories/" + categoryName;
+}

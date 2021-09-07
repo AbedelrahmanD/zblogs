@@ -31,6 +31,7 @@
     </div>
     <form class="searchContainer" id="postSerachForm">
         <div class="cmInputContainer">
+            <img id="enterImageSearchPost" class="enterImage" src=" {{ URL::asset('images/enter_black.png') }}" alt="">
             <input type="text" placeholder=" " class="cmInput" id="searchPostName"
                 value={{ $postsearchName ?? '' }}>
             <label class="cmLabel"> Search...</label>

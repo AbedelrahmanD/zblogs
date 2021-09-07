@@ -13,6 +13,8 @@
     </div>
     <form class="searchContainer" id="categorySearchForm">
         <div class="cmInputContainer">
+            <img id="enterImageSearchCategory" class="enterImage" src="{{ URL::asset('images/enter_black.png') }}"
+                alt="">
             <input type="text" placeholder=" " class="cmInput" id="searchCategoryName"
                 value={{ $categoryNameSearch ?? '' }}>
             <label class="cmLabel"> Search...</label>

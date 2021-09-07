@@ -19,8 +19,8 @@ $(function () {
             err++;
         }
         if (err > 0) {
-            document.body.scrollTop = 300; // For Safari
-            document.documentElement.scrollTop = 300; // For Chrome, Firefox, IE and Opera
+            document.body.scrollTop = 100; // For Safari
+            document.documentElement.scrollTop = 100; // For Chrome, Firefox, IE and Opera
             return;
         }
 
@@ -53,7 +53,8 @@ $(function () {
                     $(".previewImage").html(
                         "  <img id='postImageId' src='" + response + "' >"
                     );
-                scrollDown();
+                document.body.scrollTop = 300; // For Safari
+                document.documentElement.scrollTop = 300; // For Chrome, Firefox, IE and Opera
                 $("#savePostToast").removeClass("cmToastHide");
                 $("#savePostToast").addClass("cmToastShow");
                 $(".loadingScreen").fadeOut();
