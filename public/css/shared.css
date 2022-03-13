@@ -406,12 +406,15 @@ i {
     margin: auto;
     width: 100%;
     position: relative;
+    display: flex;
 }
 
 .applicationNav .logoImage {
     position: absolute;
-    top: -1px;
-    left: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 50px;
     cursor: pointer;
     -webkit-transition: all 3s;
     transition: all 3s;
@@ -428,7 +431,9 @@ i {
     align-items: center;
     border-radius: 5px;
 }
-
+.ql-video {
+    max-width: 100%;
+}
 .applicationNav .logoImage:hover img {
     -webkit-transform: rotateZ(180deg);
     transform: rotateZ(180deg);
@@ -453,6 +458,7 @@ i {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    margin: 0;
 }
 
 .applicationNav ul a {
@@ -1363,6 +1369,8 @@ pre.ql-syntax {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 1000px) {

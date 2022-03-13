@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @php
-$webVersion = 'version=1';
+$webVersion = 'version=2';
 @endphp
 
 <head>

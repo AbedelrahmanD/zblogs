@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogPostController extends Controller
 {
+    public function test()
+    {
+        return "test";
+    }
 
     public function appPostEdit(Request $r)
     {
