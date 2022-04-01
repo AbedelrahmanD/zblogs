@@ -1,0 +1,8 @@
+$primary: royalblue;
+$secondary: white;
+$third: #f04f78;
+@mixin boxShadow {
+    box-shadow: 1px 1px 5px grey;
+    background-color: white;
+    border-radius: 3px;
+}

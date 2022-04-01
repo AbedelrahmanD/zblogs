@@ -1,0 +1,68 @@
+@import "definitions";
+.blogInfoHorisontal,
+.blogInfoVertical {
+    box-shadow: 1px 1px 5px $primary;
+    border-radius: 5px;
+    padding: 15px 5px;
+    background-color: white;
+}
+
+.autherName {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.blogInfoHorisontal {
+    display: flex;
+    justify-content: center;
+    .blogPostInfoImage {
+        margin: 5px;
+    }
+    .blogPostInfoDescription {
+        width: 60%;
+        margin: 5px;
+    }
+}
+.blogInfoVertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .blogPostInfoImage {
+        width: 95%;
+        margin: auto;
+        height: 300px;
+        img {
+            height: 100%;
+        }
+    }
+}
+.blogPostInfoImage {
+    img {
+        object-fit: contain;
+        width: 100%;
+    }
+}
+.blogPostInfoDescription {
+    margin: 5px 0px;
+    width: 95%;
+    img {
+        max-width: 95%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .blogInfoHorisontal {
+        flex-direction: column;
+        align-items: center;
+        .blogPostInfoImage {
+            width: 95%;
+            margin: auto;
+        }
+        .blogPostInfoDescription {
+            margin: 5px 0px;
+            width: 95%;
+        }
+    }
+}

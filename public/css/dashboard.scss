@@ -1,0 +1,170 @@
+@import "definitions";
+
+.dashboardContainer {
+    display: flex;
+}
+.dashboardNav {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: $primary;
+    padding: 5px;
+    overflow-y: auto;
+}
+.navItem {
+    margin: 5px 0px;
+    padding: 10px 5px;
+    width: 90%;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    transition: all 0.5s;
+    border: 2px solid $secondary;
+    &:hover {
+        color: $secondary;
+        background-color: $primary;
+    }
+}
+.dashboardBody {
+    width: 75%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pageOptions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 5px;
+        color: $primary;
+        &:hover {
+            background-color: #f7f7f7;
+        }
+    }
+}
+.pageForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.cmForm {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 5px 0px;
+}
+
+table {
+    width: 95%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-color: white;
+    tr:nth-child(even) {
+        background-color: white;
+    }
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid white;
+    }
+    th {
+        background-color: $primary;
+        color: white;
+    }
+}
+.singleItemRowTitle {
+    font-weight: bold;
+    color: black;
+    font-size: 1rem;
+    padding: 10px;
+}
+.singleItemRowAction {
+    display: flex;
+    justify-content: center;
+
+    .fa-pen {
+        background-color: #27e227;
+    }
+    .fa-times {
+        background-color: #d62c2c;
+    }
+    i {
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin: 0px 2px;
+    }
+}
+
+div.gridTable {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.previewImagesGrid {
+    display: grid;
+    max-width: 500px;
+    width: 95%;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    grid-template-columns: repeat(auto-fit, 280px);
+}
+.previewImage {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    margin: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .dashboardBody {
+        padding: 0;
+    }
+    .dashboardContainer {
+        flex-direction: column;
+    }
+    .dashboardNavHide {
+        display: none;
+    }
+    .dashboardNav {
+        width: 100%;
+        position: fixed;
+        flex-direction: column;
+        z-index: 50;
+    }
+    .dashboardBody {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .cmForm {
+        overflow: auto;
+    }
+}
